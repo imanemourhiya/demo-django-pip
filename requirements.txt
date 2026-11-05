@@ -1,8 +1,9 @@
 # Dependances volontairement anciennes (lab DevSecOps) -- NE PAS exposer sur internet
-Django==3.2.0
-requests==2.19.1
-urllib3==1.23
-sqlparse==0.2.4
-PyJWT==1.5.0
+Django==5.2.7
+requests==2.32.5
+urllib3==2.6.3
+sqlparse==0.5.4
+PyJWT==2.10.1
 # Necessaire pour Python 3.12+ (distutils retire de la bibliotheque standard)
 setuptools==69.5.1
+

@@ -17,9 +17,13 @@ pipeline {
   }
     post {
     failure {
-      mail to: 'imanemassa2005@gmail.com',
-           subject: "CVE détectées : ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-           body: "Le build a échoué.\n${currentBuild.description ?: ''}\nDétails : ${env.BUILD_URL}"
+        emailext(
+            to: 'imanemassa2005@gmail.com',
+            subject: "CVE détectées : ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+            body: "Le build a échoué.\n${currentBuild.description ?: ''}\nDétails : ${env.BUILD_URL}",
+            attachmentsPattern: 'reports/dependency-check-report.html'
+        )
     }
-  }
+}
+}
 }
